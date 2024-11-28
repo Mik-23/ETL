@@ -1,0 +1,20 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "genre": "Animation"
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "match_phrase": {
+            "title": "star wars"
+          }
+        }
+      ]
+    }
+  }
+}

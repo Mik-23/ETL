@@ -1,0 +1,20 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "genre": "Horror"
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "exists": {
+            "field": "description"
+          }
+        }
+      ]
+    }
+  }
+}

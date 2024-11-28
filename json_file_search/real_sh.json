@@ -1,0 +1,31 @@
+{
+  "query": {
+    "boosting": {
+      "positive": {
+        "bool": {
+          "should": [
+          {
+          "match_phrase": {
+             "title": "all stars"
+             }
+          },
+          {
+          "match_phrase": {
+             "title": "super star"
+              }
+            }        
+          ]
+        }
+      },
+      "negative": [
+        {
+          "query_string": {
+           "default_field": "genre",
+           "query": "Reality-TV OR Talk-Show"
+          }
+        }
+      ],
+      "negative_boost": 0.5
+    }
+  }
+}

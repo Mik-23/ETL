@@ -1,0 +1,31 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+        "match_phrase": {
+          "title": "star wars episode"
+          }
+        },
+        {
+        "match_phrase": {
+          "writers_names": "George Lucas"
+          }
+        }
+      ],
+      "must_not": [
+        {
+        "match_phrase": {
+          "title": "Deleted Scenes"
+          }
+        },
+        {
+        "query_string": {
+            "default_field": "genre",
+            "query": "Drama OR War"
+          }
+        }
+      ]
+    }
+  }
+}

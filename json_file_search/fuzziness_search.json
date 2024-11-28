@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match": {
+      "title": {
+          "query": "All Stwr Mr & Mes",
+           "fuzziness": "auto"
+           }
+       }
+    }
+}

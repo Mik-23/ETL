@@ -1,0 +1,27 @@
+{
+  "query": {
+    "boosting": {
+      "positive": {
+        "match": {
+          "genre": "Comedy"
+        }
+      },
+      "negative": [
+        {
+          "bool": {
+            "filter": [
+              {
+                "range": {
+                  "imdb_rating": {
+                    "lt": 6.5
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "negative_boost": 0.5
+    }
+  }
+}

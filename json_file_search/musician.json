@@ -1,0 +1,21 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "genre": "Music"
+          }
+        }
+      ],
+      "should": [
+        {
+          "query_string": {
+            "default_field": "actors_names",
+            "query": "Elton John OR Britney Spears OR Ed Sheeran OR Johnny Cash"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "imdb_rating": {
+              "gt": 8
+            }
+          }
+        }
+      ]
+    }
+  }
+}
